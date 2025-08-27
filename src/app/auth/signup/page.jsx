@@ -1,5 +1,5 @@
 "use client"
-import { doCredentialLogin, dosociallogin } from '@/lib/action'
+import { doCredentialLogin, dosociallogin } from "../../../lib/action"
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -51,7 +51,7 @@ function Page() {
             <form className="mb-4" action={dosociallogin}>
               <button
                 type="submit"
-                className="w-full border bg-black  border-black py-2 rounded-md text-sm font-medium"
+                className="w-full border bg-black text-white border-black py-2 rounded-md text-sm font-medium"
                 name='action'
                 value="google"
               >
