@@ -1,7 +1,6 @@
 "use client";
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
@@ -13,8 +12,21 @@ export default function CartPage() {
     const storedCart = localStorage.getItem("products");
     if (storedCart) {
       setCartItems(JSON.parse(storedCart));
+      console.log("render")
     }
   }, []);
+
+  const handleincreasequantity = (id) => {
+    const updatedcart = cartItems.map((item) => item._id == id ? { ...item, quantity: item.quantity + 1 } : item)
+    localStorage.setItem("products", JSON.stringify(updatedcart))
+    setCartItems(updatedcart)
+  }
+
+  const handledecreasequantity = () => {
+    const updatedcart = cartItems.map((item) => item._id == id ? { ...item, quantity: item.quantity - 1 } : item)
+    localStorage.setItem("products", JSON.stringify(updatedcart))
+    setCartItems(updatedcart)
+  }
 
   const removeItem = (id) => {
     const updatedCart = cartItems.filter((item) => item._id !== id);
@@ -23,31 +35,31 @@ export default function CartPage() {
   };
 
   const getTotal = () => {
-    return cartItems.reduce((acc, item) => acc + item.price, 0);
+    return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
-const redirectCheckout = async (data) => {
-  console.log(data)
-  try {
-    const res = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: data }), // must be wrapped
-    });
+  const redirectCheckout = async (data) => {
+    console.log(data)
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: data }), // must be wrapped
+      });
 
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.error || "Failed to create checkout session");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to create checkout session");
+      }
+
+      const { id } = await res.json();
+      console.log("your id", id)
+      const stripe = await stripePromise;
+      await stripe.redirectToCheckout({ sessionId: id });
+    } catch (err) {
+      console.error("Checkout error:", err);
+      alert("Checkout failed: " + err.message);
     }
-
-    const { id } = await res.json();
-    console.log("your id",id)
-    const stripe = await stripePromise;
-    await stripe.redirectToCheckout({ sessionId: id });
-  } catch (err) {
-    console.error("Checkout error:", err);
-    alert("Checkout failed: " + err.message);
-  }
-};
+  };
 
 
 
@@ -73,9 +85,16 @@ const redirectCheckout = async (data) => {
                 />
                 <div>
                   <h2 className="font-semibold">{item.title}</h2>
-                  <p className="text-gray-500">${item.price.toFixed(2)}</p>
+                  <p className="text-gray-500">${item.price.toFixed(2) * item.quantity}</p>
                 </div>
               </div>
+
+              <div>
+                <h1>{item.quantity}</h1>
+                <button onClick={()=>handleincreasequantity(item._id)}>+</button>
+                <button onClick={handledecreasequantity}>-</button>
+              </div>
+
               <button
                 onClick={() => removeItem(item._id)}
                 className="bg-red-500 bebas-neue-regular text-white px-4 py-2 rounded hover:bg-red-600 transition"
@@ -90,10 +109,10 @@ const redirectCheckout = async (data) => {
             <span>${getTotal().toFixed(2)}</span>
           </div>
 
-            <button onClick={() => redirectCheckout(cartItems)} className="w-full mt-6 bg-black bebas-neue-regular text-white py-3 rounded hover:bg-blue-700 transition">
+          <button onClick={() => redirectCheckout(cartItems)} className="w-full mt-6 bg-black bebas-neue-regular text-white py-3 rounded hover:bg-blue-700 transition">
 
-              Proceed to Checkout
-            </button>
+            Proceed to Checkout
+          </button>
 
 
         </div>

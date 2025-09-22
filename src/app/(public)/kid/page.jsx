@@ -1,8 +1,8 @@
 import React from 'react'
-import heroimage from "../../../public/kidhero.png"
-import Hero from "../../components/ui/hero"
-import Gallery from "../../components/ui/gallery"
-import { CarouselSpacing } from "../../components/ui/multicarousel"
+import heroimage from "../../../../public/kidhero.png"
+import Hero from "../../../components/ui/hero"
+import Gallery from "../../../components/ui/gallery"
+import { CarouselSpacing } from "../../../components/ui/multicarousel"
 
 function page() {
   

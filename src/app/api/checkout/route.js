@@ -19,7 +19,7 @@ export async function POST(req) {
           },
           unit_amount: item.price * 100, 
         },
-        quantity: 1,
+        quantity: item.quantity,
       })),
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,

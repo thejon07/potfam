@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from "../../components/ui/hero"
-import { CarouselSpacing } from "../../components/ui/multicarousel"
-import MultiCard from "../../components/ui/multicard"
+import Hero from "../../../components/ui/hero"
+import { CarouselSpacing } from "../../../components/ui/multicarousel"
+import MultiCard from "../../../components/ui/multicard"
 
 function page() {
   const cardimg = [

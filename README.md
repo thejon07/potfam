@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+<!-- Key points
+
+usePathname does not return https://example.com (the base URL).
+It does not return ?sort=asc (query string).
+It does not return #reviews (hash).
+
+
+If you need the full URL including queries and hash, you should use:
+
+useSearchParams() → for query strings (?sort=asc).
+
+usePathname() → for the path (/admin/products/123).
+
+typeof window !== "undefined" && window.location.href → for the full absolute URL. -->

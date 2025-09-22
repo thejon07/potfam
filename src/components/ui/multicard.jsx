@@ -5,7 +5,7 @@ export default function Multicard({ data }) {
     return (
         <>
             <h1 className='mt-20 text-center bebas-neue-regular text-3xl'>Member Benefits</h1>
-            <div className='flex gap-4 py-4 justify-center'>
+            <div className='flex flex-col md:flex-row md:justify-center gap-4 py-4 items-center'>
 
                 {data?.cardimg?.map((item, index) => (
                     <div key={index}>

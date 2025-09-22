@@ -1,8 +1,8 @@
 
-import { dbConnect } from "../../../lib/dbconnect"
-import { Product } from "../../../model/post.model"
+import { dbConnect } from "../../../../lib/dbconnect"
+import { Product } from "../../../../model/post.model"
 
-import Cart from "../../../components/ProductDetail"
+import Cart from "../../../../components/ProductDetail"
 
 async function page({ params }) {
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { CarouselSpacing } from "../../components/ui/multicarousel"
-import CardMod from "../../components/ui/cardmod"
+import { CarouselSpacing } from "../../../components/ui/multicarousel"
+import CardMod from "../../../components/ui/cardmod"
 
 function page() {
     return (
