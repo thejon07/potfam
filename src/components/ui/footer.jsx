@@ -29,7 +29,7 @@ export default function Home() {
                 <div className="flex flex-col gap-10 md:gap-28 md:flex-row md:justify-center text-center md:text-left">
                     <div>
                         <h3 className="font-semibold text-lg mb-2 bebas-neue-regular">Featured</h3>
-                        <ul className="space-y-1 text-gray-500">
+                        <ul className="space-y-1 text-gray-500 bebas-neue-regular">
                             <li><a href="#">Air Force 1</a></li>
                             <li><a href="#">Jordan 1</a></li>
                             <li><a href="#">Air Max</a></li>
@@ -38,7 +38,7 @@ export default function Home() {
 
                     <div>
                         <h3 className="font-semibold text-lg mb-2 bebas-neue-regular">Shoes</h3>
-                        <ul className="space-y-1 text-gray-500">
+                        <ul className="space-y-1 text-gray-500 bebas-neue-regular">
                             <li><a href="#">All Shoes</a></li>
                             <li><a href="#">Jordan Shoes</a></li>
                             <li><a href="#">Running Shoes</a></li>
@@ -47,7 +47,7 @@ export default function Home() {
 
                     <div>
                         <h3 className="font-semibold text-lg mb-2 bebas-neue-regular">Clothing</h3>
-                        <ul className="space-y-1 text-gray-500">
+                        <ul className="space-y-1 text-gray-500 bebas-neue-regular">
                             <li><a href="#">All Clothing</a></li>
                             <li><a href="#">Tops & T-Shirts</a></li>
                             <li><a href="#">Hoodies & Sweatshirts</a></li>
@@ -56,7 +56,7 @@ export default function Home() {
 
                     <div>
                         <h3 className="font-semibold text-lg mb-2 bebas-neue-regular">Kids</h3>
-                        <ul className="space-y-1 text-gray-500">
+                        <ul className="space-y-1 text-gray-500 bebas-neue-regular">
                             <li><a href="#">Infant & Toddler Shoes</a></li>
                             <li><a href="#">Kids Shoes</a></li>
                             <li><a href="#">Kids Clothing</a></li>

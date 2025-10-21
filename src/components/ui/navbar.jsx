@@ -67,8 +67,12 @@ export default function Navbar({ authorize }) {
   return (
     <header className="border-b border-gray-200 bg-white">
       <nav className="flex items-center justify-between px-6 py-3 md:px-8">
+        
         <div className="flex items-center gap-2">
-          <Image src={potfam} width={80} height={80} alt="logo" />
+          <Link href="/">
+                <Image src={potfam} width={80} height={80} alt="logo" />
+          </Link>
+    
         </div>
 
         {/* Desktop Menu */}
