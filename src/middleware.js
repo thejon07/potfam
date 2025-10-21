@@ -7,7 +7,7 @@ export async function middleware(request) {
     {
       req:request,
       secret:process.env.AUTH_SECRET,
-      cookieName: "authjs.session-token"
+      cookieName: "__Secure-authjs.session-token"
     }
   );
   const path = request.nextUrl.pathname;
