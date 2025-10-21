@@ -6,6 +6,7 @@ import Cart from "../../../../components/ProductDetail"
 
 async function page({ params }) {
 
+
   const { id } = await params;
   console.log("product id ", id)
   await dbConnect();

@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
+import {ChevronUp} from "lucide-react"
 import SaleLoading from './saleLoading'
 import { Suspense } from 'react'
 
@@ -32,7 +33,7 @@ function page() {
         <>
 
             <Head>
-                <title>Clothes & Shoes on Sale | PotFam</title>
+                <title >Clothes & Shoes on Sale | PotFam</title>
                 <meta name="description" content="Shop the latest clothes and shoes on sale. Find your favorite sneakers, jackets, and more at discounted prices." />
                 <meta name="keywords" content="sale, clothes, shoes, sneakers, jackets, fashion, discount" />
                 <meta name="robots" content="index, follow" />
@@ -59,37 +60,38 @@ function page() {
                                 <div>
                                     <h2 className='font-semibold my-6 border-b py-2 border-gray-400 text-xs'>SORT BY</h2>
                                     <ul>
-                                        <li className='mb-2 border-b pb-2 border-gray-400 text-sm'>PRICE (LOW - HIGH)</li>
                                         <li className='flex justify-between pb-2 border-gray-400 border-b'>
-                                            <h3 className='text-sm'>CATEGORY</h3>
-                                            <button className='rotate-180'>{">"}</button>
+                                            <h3 className='text-xl bebas-neue-regular'>CATEGORY</h3>
+                                            <button className='rotate-180'>
+                                                <ChevronUp/>
+                                            </button>
                                         </li>
-                                        <li onClick={() => setCategory("male")} className='text-xs mt-2 font-semibold border-2 border-black p-2 w-fit cursor-pointer bg-black text-white'>MALE</li>
-                                        <li onClick={() => setCategory("female")} className='text-xs mt-2 font-semibold border-2 border-black p-2 w-fit cursor-pointer bg-black text-white'>FEMALE</li>
+                                        <li onClick={() => setCategory("male")} className=' mt-2 font-semibold border-1 w-full border-black p-2 w-fit cursor-pointer bebas-neue-regular'>MALE</li>
+                                        <li onClick={() => setCategory("female")} className=' mt-2 font-semibold border-1 w-full border-black p-2 w-fit cursor-pointer bebas-neue-regular'>FEMALE</li>
                                         <li onClick={() => setCategory(null)} className='text-xs mt-2 text-blue-600 underline cursor-pointer'>Clear Filter</li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <button className='p-2 w-full bg-black text-white font-semibold mt-4'>SEARCH</button>
+                            <button className='p-2 w-full border border-1 font-semibold bebas-neue-regular border-black mt-4'>SEARCH</button>
                         </div>
                     </div>
                 )}
 
                 {/* Breadcrumb & Heading */}
-                <ul className='flex gap-1 py-10 text-sm flex-wrap'>
+                <ul className='flex gap-1 py-10 text-sm flex-wrap bebas-neue-regular'>
                     <li className=' border-b border-black'>Home</li>
                     <li>/</li>
                     <li>sale</li>
                 </ul>
 
                 <div className='flex justify-between items-center flex-wrap gap-4'>
-                    <h1 className='text-3xl md:text-4xl font-semibold'>Clothes & Shoes on Sale</h1>
+                    <h1 className='text-3xl md:text-4xl font-semibold bebas-neue-regular'>Clothes & Shoes on Sale</h1>
                     <button className='px-4 py-2 border-2 border-black bebas-neue-regular' onClick={handletoggle}>FILTER & SORT</button>
                 </div>
 
                 {/* Description */}
-                <section className='py-6 text-sm'>
+                <section className='py-6 text-sm text-gray-600 bebas-neue-regular [word-spacing:4px]'>
                     <p>Find your new favorite tee, jacket, jersey, tights or sneakers shopping clothes and shoes on sale at adidas. With deals like this, you can stock up.</p>
                 </section>
 

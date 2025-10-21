@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero({ data }) {
   return (
@@ -24,9 +25,11 @@ function Hero({ data }) {
         {data?.desc || ""} 
       </p>
 
-      <button className="border-b-2 border-black text-lg sm:text-xl mt-6 hover:opacity-80 transition">
+     <Link href="/sale">
+     <button className="border-b-2 border-black text-lg sm:text-xl mt-6 hover:opacity-80 transition">
         Shop
       </button>
+     </Link> 
     </div>
   );
 }

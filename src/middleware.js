@@ -16,7 +16,7 @@ export async function middleware(request) {
   const privatepath = path == "/cart"
 
   if(privatepath && !session){
-    return NextResponse.redirect(new URL("/",request.url))
+    return NextResponse.redirect(new URL("/option",request.url))
   }
 
   if(publicpath && session){

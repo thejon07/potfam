@@ -19,7 +19,7 @@ export default function Navbar({ authorize }) {
   const user = authorize;
 
 
-  useEffect(() => {
+  useEffect(() => { 
     if (isOpen && togglenav.current) {
       gsap.fromTo(
         togglenav.current,
@@ -155,9 +155,16 @@ export default function Navbar({ authorize }) {
           className="md:hidden nav-toggle px-6 py-4 border-t border-gray-200 bg-white"
         >
           <ul className="flex flex-col gap-4 mb-4 text-sm font-medium text-gray-700">
+            <Link href="/men">
             <li className="hover:text-black cursor-pointer">MEN</li>
-            <li className="hover:text-black cursor-pointer">WOMEN</li>
+            </Link>
+            <Link href="/women">
+             <li className="hover:text-black cursor-pointer">WOMEN</li>
+            </Link>
+           <Link href="/kid">
             <li className="hover:text-black cursor-pointer">KIDS</li>
+           </Link>
+           
             <Link href="/sale"><li className="hover:text-black cursor-pointer">SALE</li></Link>
           </ul>
           <div className="flex flex-col gap-3">
@@ -169,7 +176,9 @@ export default function Navbar({ authorize }) {
             </div>
             <div className="flex gap-4 text-gray-700">
               <User className="cursor-pointer" />
+              <Link href="/cart">
               <ShoppingBag className="cursor-pointer" />
+              </Link>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 
 function Page() {
   const [formtype, setFormtype] = useState("email")
+
   const [data, setData] = useState({
     email: "",
     password: ""
@@ -51,12 +52,18 @@ function Page() {
             <form className="mb-4" action={dosociallogin}>
               <button
                 type="submit"
-                className="w-full border bg-black text-white border-black py-2 rounded-md text-sm font-medium"
-                name='action'
+                className="w-full flex items-center justify-center gap-2 border bg-black text-white border-black py-2 rounded-md text-sm font-medium"
+                name="action"
                 value="google"
               >
-                Sign in with Google
+                <img
+                  src="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo.png"
+                  className="w-4 h-4 rounded-full bg-white p-0.5"
+                  alt="google"
+                />
+                <span>Sign in with Google</span>
               </button>
+
             </form>
             <p className='text-black'>Or,</p>
             <form onSubmit={handleemailsubmit}>

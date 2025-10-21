@@ -81,7 +81,6 @@ function page() {
                 {/* Breadcrumb & Heading */}
                 <ul className='flex gap-1 py-10 text-sm flex-wrap'>
                     <li className=' border-b border-black'>Home</li>
-                    <li>/</li>
                     <li>{pathname}</li>
                 </ul>
 

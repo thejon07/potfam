@@ -1,6 +1,8 @@
 "use client";
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
+import { ChevronUp, ChevronDown } from 'lucide-react';
+
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
@@ -22,7 +24,7 @@ export default function CartPage() {
     setCartItems(updatedcart)
   }
 
-  const handledecreasequantity = () => {
+  const handledecreasequantity = (id) => {
     const updatedcart = cartItems.map((item) => item._id == id ? { ...item, quantity: item.quantity - 1 } : item)
     localStorage.setItem("products", JSON.stringify(updatedcart))
     setCartItems(updatedcart)
@@ -68,7 +70,7 @@ export default function CartPage() {
       {cartItems.length === 0 ? (
         <div className="flex flex-col justify-center items-center  shadow-md rounded-lg p-10">
           <h1 className="text-3xl font-bold mb-4 bebas-neue-regular">Your Cart</h1>
-          <p className="text-center text-gray-500">Your cart is empty.</p>
+          <p className="text-center text-gray-500 bebas-neue-regular">Your cart is empty.</p>
         </div>
       ) : (
         <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6">
@@ -89,10 +91,18 @@ export default function CartPage() {
                 </div>
               </div>
 
-              <div>
-                <h1>{item.quantity}</h1>
-                <button onClick={()=>handleincreasequantity(item._id)}>+</button>
-                <button onClick={handledecreasequantity}>-</button>
+              <div className="flex justify-center items-center gap-4">
+                <h1 className="block bebas-neue-regular">{item.quantity}</h1>
+                <div>
+                  <button onClick={() => handleincreasequantity(item._id)} className="block border-2">
+                    <ChevronUp className="w-4 h-4"/>
+                  </button>
+                  <button onClick={()=>handledecreasequantity(item._id)} className=" block border-2">
+                    <ChevronDown className="w-4  h-4" />
+                  </button>
+
+                </div>
+
               </div>
 
               <button
