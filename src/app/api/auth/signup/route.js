@@ -1,5 +1,5 @@
 import { dbConnect } from "../../../../lib/dbconnect";
-import {User} from "../../../../model/user.model"; // make sure your model exports default
+import {Author} from "../../../../model/user.model"; // make sure your model exports default
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 
@@ -16,7 +16,7 @@ export const POST = async (req) => {
 
     await dbConnect();
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await Author.findOne({ email });
     if (existingUser) {
       return NextResponse.json(
         { message: "User already exists" },
