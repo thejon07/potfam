@@ -179,7 +179,7 @@ export default function Navbar({ authorize }) {
               </Button>
             </div>
             <div className="flex gap-4 text-gray-700">
-              <User className="cursor-pointer" />
+              {user ?<Image src={user?.user.image} className="rounded-full" width={30} height={50} alt="user" />:<Link href="/signup"><User className="cursor-pointer" /></Link>}
               <Link href="/cart">
               <ShoppingBag className="cursor-pointer" />
               </Link>

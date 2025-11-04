@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link"
 import Image from 'next/image'
 import { CarouselSpacing } from "../../../components/ui/multicarousel"
 import CardMod from "../../../components/ui/cardmod"
@@ -24,9 +25,12 @@ function Page() {
         <p className="bebas-neue-regular text-base sm:text-lg md:text-xl">
           MORE CUSHIONED, MORE COMFORT, MORE RUNNING
         </p>
+        <Link href="/sale ">
         <button className="bebas-neue-regular border-b-2 border-black text-base sm:text-lg hover:text-gray-600 transition">
           SHOP NOW
         </button>
+        </Link>
+
       </div>
 
       {/* ✅ CAROUSEL SECTION */}

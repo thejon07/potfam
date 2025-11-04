@@ -1,6 +1,7 @@
 "use client"
 import { XMarkIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
+import Link from "next/link"
 
 export default function Banner() {
   const [togle, setIstoggle] = useState(true)
@@ -45,12 +46,12 @@ export default function Banner() {
               </svg>
               Join us in PotFam from June 7 – 9 to see what’s coming next.
             </p>
-            <a
-              href="#"
+            <Link
+              href="/signup"
               className="flex-none rounded-full bg-white/10 px-3.5 py-1 text-sm font-semibold text-white shadow-xs inset-ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Register now <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
           <div className="flex flex-1 justify-end">
             <button type="button" onClick={handletoggle} className="-m-3 p-3 focus-visible:-outline-offset-4">

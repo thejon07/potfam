@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import Link from "next/link"
 import { Button } from "./button"
 
 function CardMod() {
@@ -37,12 +38,16 @@ function CardMod() {
               {item.title}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-3">{item.desc}</p>
-            <Button
-              variant="link"
-              className="text-white underline underline-offset-4 decoration-2 hover:text-gray-200"
-            >
-              SHOP NOW
-            </Button>
+
+            <Link href="/sale">
+              <Button
+                variant="link"
+                className="text-white underline underline-offset-4 decoration-2 hover:text-gray-200"
+              >
+                SHOP NOW
+              </Button>
+            </Link>
+
           </div>
         </div>
       ))}

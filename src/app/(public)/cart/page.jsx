@@ -100,9 +100,7 @@ export default function CartPage() {
                   <button onClick={()=>handledecreasequantity(item._id)} className=" block border-2">
                     <ChevronDown className="w-4  h-4" />
                   </button>
-
                 </div>
-
               </div>
 
               <button
