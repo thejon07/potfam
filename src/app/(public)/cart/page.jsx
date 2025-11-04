@@ -79,7 +79,7 @@ export default function CartPage() {
               key={item._id}
               className="flex justify-between items-center border-b py-4"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 w-60">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -91,7 +91,7 @@ export default function CartPage() {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center gap-4">
+              <div className=" flex justify-center items-center gap-4">
                 <h1 className="block bebas-neue-regular">{item.quantity}</h1>
                 <div>
                   <button onClick={() => handleincreasequantity(item._id)} className="block border-2">
