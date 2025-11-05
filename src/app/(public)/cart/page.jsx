@@ -86,7 +86,7 @@ export default function CartPage() {
                   className="w-20 h-20 object-cover rounded"
                 />
                 <div>
-                  <h2 className="font-semibold">{item.title}</h2>
+                  <h2 className="font-semibold text-xs sm:text-lg">{item.title}</h2>
                   <p className="text-gray-500">${item.price.toFixed(2) * item.quantity}</p>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function CartPage() {
 
               <button
                 onClick={() => removeItem(item._id)}
-                className="bg-red-500 bebas-neue-regular text-white px-4 py-2 rounded hover:bg-red-600 transition"
+                className="bg-red-500 bebas-neue-regular text-white px-4 py-2 text-xs ml-2 sm:text-lg sm:ml-0 rounded hover:bg-red-600 transition"
               >
                 Remove
               </button>
